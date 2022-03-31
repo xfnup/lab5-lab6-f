@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dblab2.mapper.OutputMapper">
+    <insert id="addOutput" parameterType="Output">
+        insert into output(c_id,o_price) values(#{c_id},#{o_price})
+    </insert>
+
+    <delete id="deleteOutput" parameterType="Output">
+        delete from output where o_id = #{o_id}
+    </delete>
+</mapper>
