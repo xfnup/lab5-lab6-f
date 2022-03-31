@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dblab2.mapper.StorageMapper">
+    <insert id="addStorage" parameterType="Storage">
+        insert into storage(s_name,s_address) values(#{s_name},#{s_address})
+    </insert>
+
+    <delete id="deleteStorage" parameterType="Storage">
+        delete from storage where s_name=#{s_name}
+    </delete>
+</mapper>

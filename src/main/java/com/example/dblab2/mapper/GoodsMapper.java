@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface GoodsMapper {
-
     int addGoods(Goods goods);//增加商品
+
+    int deleteGoods(Goods goods);//删除商品
 }

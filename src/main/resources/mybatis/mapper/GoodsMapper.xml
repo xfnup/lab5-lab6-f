@@ -6,4 +6,8 @@
     <insert id="addGoods" parameterType="Goods">
         insert into goods(g_name) values(#{g_name})
     </insert>
+
+    <delete id="deleteGoods" parameterType="Goods">
+        delete from goods where g_name=#{g_name}
+    </delete>
 </mapper>
