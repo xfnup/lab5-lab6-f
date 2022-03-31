@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: "root"
+    password: "aliyunxfn"
+    url: "jdbc:mysql://59.110.138.184:3306/PSI?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai"
+    driver-class-name: com.mysql.cj.jdbc.Driver
