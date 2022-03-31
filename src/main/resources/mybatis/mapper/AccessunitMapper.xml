@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dblab2.mapper.AccessunitMapper">
+    <insert id="addAccessunit" parameterType="Accessunit">
+        insert into accessunit(a_id,au_seq,g_id,au_num,au_price) values(#{a_id},#{au_seq},#{g_id},#{au_num},#{au_price})
+    </insert>
+
+    <delete id="deleteAccessunit" parameterType="Accessunit">
+        delete from accessunit where a_id = #{a_id} and au_seq = #{au_seq}
+    </delete>
+</mapper>
