@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Customer {
+    private int c_id;
     private String c_name;
-    public String c_type;
+    private String c_type;
 }

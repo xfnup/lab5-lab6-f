@@ -8,6 +8,10 @@
     </insert>
 
     <delete id="deleteStorage" parameterType="Storage">
-        delete from storage where s_name=#{s_name}
+        delete from storage where s_id=#{s_id}
     </delete>
+
+    <select id="selectStorage" resultType="Storage">
+        select * from storage;
+    </select>
 </mapper>

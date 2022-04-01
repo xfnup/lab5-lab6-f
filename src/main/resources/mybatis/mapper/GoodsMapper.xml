@@ -8,6 +8,10 @@
     </insert>
 
     <delete id="deleteGoods" parameterType="Goods">
-        delete from goods where g_name=#{g_name}
+        delete from goods where g_id=#{g_id}
     </delete>
+
+    <select id="selectGoods" resultType="Goods">
+        select * from goods;
+    </select>
 </mapper>

@@ -10,4 +10,8 @@
     <delete id="deleteMerchant" parameterType="Merchant">
         delete from merchant where m_name=#{m_name}
     </delete>
+
+    <select id="selectMerchant" resultType="Merchant">
+        select * from merchant;
+    </select>
 </mapper>

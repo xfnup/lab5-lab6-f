@@ -8,6 +8,10 @@
     </insert>
 
     <delete id="deleteCustomer" parameterType="Customer">
-        delete from customer where c_name=#{c_name} and c_type=#{c_type}
+        delete from customer where c_id=#{c_id}
     </delete>
+
+    <select id="selectCustomer" resultType="Customer">
+        select * from customer;
+    </select>
 </mapper>

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Storage {
+    private int s_id;
     private String s_name;
     private String s_address;
 }

@@ -1,13 +1,14 @@
 package com.example.dblab2.controller;
 
 import com.example.dblab2.mapper.StorageMapper;
+import com.example.dblab2.pojo.Goods;
 import com.example.dblab2.pojo.Storage;
 import com.example.dblab2.utils.JsonUtil;
+import com.example.dblab2.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/Storage")
@@ -27,5 +28,12 @@ public class StorageController {
     {
         storageMapper.deleteStorage(storage);
         return new JsonUtil(0,"删除成功",null);
+    }
+
+    @GetMapping("/select")
+    public Result<List<Storage>> selectStorage()
+    {
+        List<Storage> list= storageMapper.selectStorage();
+        return Result.success(list);
     }
 }

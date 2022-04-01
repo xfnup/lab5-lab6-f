@@ -3,11 +3,11 @@ package com.example.dblab2.controller;
 import com.example.dblab2.mapper.MerchantMapper;
 import com.example.dblab2.pojo.Merchant;
 import com.example.dblab2.utils.JsonUtil;
+import com.example.dblab2.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/Merchant")
@@ -27,5 +27,12 @@ public class MerchantController {
     {
         merchantMapper.deleteMerchant(merchant);
         return new JsonUtil(0,"删除成功",null);
+    }
+
+    @GetMapping("/select")
+    public Result<List<Merchant>> selectMerchant()
+    {
+        List<Merchant> list=merchantMapper.selectMerchant();
+        return Result.success(list);
     }
 }
