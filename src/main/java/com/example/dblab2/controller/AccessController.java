@@ -2,12 +2,13 @@ package com.example.dblab2.controller;
 
 import com.example.dblab2.mapper.AccessMapper;
 import com.example.dblab2.pojo.Access;
+import com.example.dblab2.pojo.AccessView;
 import com.example.dblab2.utils.JsonUtil;
+import com.example.dblab2.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/Access")
@@ -27,5 +28,11 @@ public class AccessController {
     {
         accessMapper.deleteAccess(access.getA_id());
         return new JsonUtil(0,"删除成功",null);
+    }
+
+    @GetMapping("/select")
+    public Result<List<AccessView>> selectAccess(){
+        List<AccessView> list= accessMapper.selectAccess();
+        return Result.success(list);
     }
 }

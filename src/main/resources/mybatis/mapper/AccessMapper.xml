@@ -10,4 +10,8 @@
     <delete id="deleteAccess" parameterType="int">
         delete from access where a_id = #{a_id}
     </delete>
+
+    <select id="selectAccess" resultType="AccessView">
+        select a_id,m_name,s_name from access,merchant,storage where access.m_id=merchant.m_id and access.s_id=storage.s_id
+    </select>
 </mapper>
