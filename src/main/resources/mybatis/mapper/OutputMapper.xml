@@ -10,4 +10,8 @@
     <delete id="deleteOutput" parameterType="Output">
         delete from output where o_id = #{o_id}
     </delete>
+
+    <select id="selectOutput" resultType="OutputView">
+        select o_id,output.c_id,customer.c_name,o_price from output,customer where customer.c_id=output.c_id
+    </select>
 </mapper>

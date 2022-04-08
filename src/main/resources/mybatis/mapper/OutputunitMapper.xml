@@ -8,6 +8,10 @@
     </insert>
 
     <delete id="deleteOutputunit" parameterType="Outputunit">
-        delete from outputunit where o_id = #{o_id} and ou_seq = #{ou_seq}
+        delete from outputunit where ou_seq = #{ou_seq}
     </delete>
+
+    <select id="selectOutputunit" resultType="OutputunitView">
+        select o_id,ou_seq,storage.s_id,storage.s_name,goods.g_id,goods.g_name,ou_num,ou_price from outputunit,storage,goods where outputunit.s_id=storage.s_id and outputunit.g_id=goods.g_id and o_id=#{o_id}
+    </select>
 </mapper>
