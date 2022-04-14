@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccessView {
     private int a_id;
+    private int s_id;
     private String m_name;
     private String s_name;
 }

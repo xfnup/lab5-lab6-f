@@ -11,6 +11,10 @@
         delete from stock where s_id=#{s_id} and g_id=#{g_id}
     </delete>
 
+    <update id="updateStock" parameterType="Stock">
+        update stock set s_num=#{s_num} where s_id=#{s_id} and g_id=#{g_id}
+    </update>
+
     <select id="selectStock" resultType="StockView">
         select s_id,stock.g_id,g_name,s_num from stock,goods where stock.g_id=goods.g_id and s_id=#{s_id}
     </select>

@@ -11,7 +11,15 @@
         delete from accessunit where au_seq = #{au_seq}
     </delete>
 
+    <update id="updateAccessunit" parameterType="Accessunit">
+        update accessunit set au_num=#{au_num} where a_id=#{a_id} and g_id=#{g_id}
+    </update>
+
     <select id="detailAccessunit" resultType="AccessunitView">
         select a_id,au_seq,accessunit.g_id,g_name,au_num,au_price from accessunit,goods where goods.g_id=accessunit.g_id and a_id = #{a_id}
+    </select>
+
+    <select id="selectAccessunit" resultType="Accessunit">
+        select * from accessunit;
     </select>
 </mapper>

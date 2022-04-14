@@ -15,5 +15,9 @@ public interface AccessunitMapper {
 
     int deleteAccessunit(Accessunit accessunit);
 
+    int updateAccessunit(Accessunit accessunit);
+
+    List<Accessunit> selectAccessunit();
+
     List<AccessunitView> detailAccessunit(int a_id);
 }

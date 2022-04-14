@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Accessunit {
     private int a_id;
+    private int s_id;
     private int au_seq;
     private int g_id;
     private int au_num;

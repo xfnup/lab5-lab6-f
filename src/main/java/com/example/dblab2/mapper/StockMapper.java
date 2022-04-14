@@ -12,5 +12,6 @@ import java.util.List;
 public interface StockMapper {
     int addStock(Stock stock);
     int deleteStock(Stock stock);
+    int updateStock(Stock stock);
     List<StockView> selectStock(int s_id);
 }
