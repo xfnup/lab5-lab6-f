@@ -2,6 +2,7 @@ package com.example.dblab2.controller;
 
 import com.example.dblab2.mapper.StockMapper;
 import com.example.dblab2.pojo.Stock;
+import com.example.dblab2.pojo.StockListView;
 import com.example.dblab2.pojo.StockView;
 import com.example.dblab2.utils.JsonUtil;
 import com.example.dblab2.utils.Result;
@@ -34,6 +35,13 @@ public class StockController {
     public Result<List<StockView>> selectStock(@RequestParam("s_id") int s_id)
     {
         List<StockView> list=stockMapper.selectStock(s_id);
+        return Result.success(list);
+    }
+
+    @GetMapping("/listview")
+    public Result<List<StockListView>> selectStockList()
+    {
+        List<StockListView> list= stockMapper.selectStockList();
         return Result.success(list);
     }
 }
