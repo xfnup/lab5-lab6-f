@@ -16,7 +16,7 @@
     </update>
 
     <select id="detailAccessunit" resultType="AccessunitView">
-        select a_id,au_seq,accessunit.g_id,g_name,au_num,au_price from accessunit,goods where goods.g_id=accessunit.g_id and a_id = #{a_id}
+        select * from accessunitview where a_id = #{a_id}
     </select>
 
     <select id="selectAccessunit" resultType="Accessunit">

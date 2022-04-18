@@ -14,6 +14,12 @@ public interface OutputMapper {
 
     int deleteOutput(Output output);
 
+    int updateOutput(int o_id,int o_price);
+
+    Output selectOprice(int o_id);
+
     List<OutputView> selectOutput();
+
+    int maxOid();
 
 }
