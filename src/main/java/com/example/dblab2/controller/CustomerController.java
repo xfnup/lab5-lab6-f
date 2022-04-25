@@ -35,4 +35,11 @@ public class CustomerController {
         List<Customer> list=customerMapper.selectCustomer();
         return Result.success(list);
     }
+
+    @GetMapping("/search")
+    public Result<List<Customer>> searchCustomer(@RequestParam("name") String name)
+    {
+        List<Customer> list=customerMapper.searchCustomer(name+'%');
+        return Result.success(list);
+    }
 }

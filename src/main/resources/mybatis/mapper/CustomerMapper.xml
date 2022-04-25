@@ -14,4 +14,8 @@
     <select id="selectCustomer" resultType="Customer">
         select * from customer;
     </select>
+
+    <select id="searchCustomer" resultType="Customer">
+        select * from customer where c_name like #{name};
+    </select>
 </mapper>

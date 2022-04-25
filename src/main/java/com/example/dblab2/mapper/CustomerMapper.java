@@ -14,4 +14,6 @@ public interface CustomerMapper {
     int deleteCustomer(Customer customer);
 
     List<Customer> selectCustomer();
+
+    List<Customer> searchCustomer(String name);
 }

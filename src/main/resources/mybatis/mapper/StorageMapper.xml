@@ -14,4 +14,8 @@
     <select id="selectStorage" resultType="Storage">
         select * from storage;
     </select>
+
+    <select id="searchStorage" resultType="Storage">
+        select * from storage where s_address like #{name};
+    </select>
 </mapper>

@@ -11,5 +11,6 @@ public class OutputView {
     private int o_id;
     private int c_id;
     private String c_name;
+    private String c_type;
     private int o_price;
 }

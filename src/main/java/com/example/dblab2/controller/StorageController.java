@@ -1,6 +1,7 @@
 package com.example.dblab2.controller;
 
 import com.example.dblab2.mapper.StorageMapper;
+import com.example.dblab2.pojo.Customer;
 import com.example.dblab2.pojo.Goods;
 import com.example.dblab2.pojo.Storage;
 import com.example.dblab2.utils.JsonUtil;
@@ -34,6 +35,13 @@ public class StorageController {
     public Result<List<Storage>> selectStorage()
     {
         List<Storage> list= storageMapper.selectStorage();
+        return Result.success(list);
+    }
+
+    @GetMapping("/search")
+    public Result<List<Storage>> searchStorage(@RequestParam("name") String name)
+    {
+        List<Storage> list=storageMapper.searchStorage(name+'%');
         return Result.success(list);
     }
 }

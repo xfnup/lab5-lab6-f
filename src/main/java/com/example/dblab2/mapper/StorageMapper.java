@@ -12,4 +12,5 @@ public interface StorageMapper {
     int addStorage(Storage storage);
     int deleteStorage(Storage storage);
     List<Storage> selectStorage();
+    List<Storage> searchStorage(String name);
 }

@@ -31,8 +31,8 @@ public class OutputController {
     @PostMapping("/delete")
     public JsonUtil deleteOutput(@RequestBody Output output)
     {
-        outputMapper.deleteOutput(output);
         payMapper.deletePay(output.getO_id());
+        outputMapper.deleteOutput(output);
         return new JsonUtil(0,"删除成功",null);
     }
 
