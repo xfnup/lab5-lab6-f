@@ -1,5 +1,6 @@
 package com.example.dblab2.controller;
 
+import com.example.dblab2.mapper.AccessMapper;
 import com.example.dblab2.mapper.AccessunitMapper;
 import com.example.dblab2.mapper.StockMapper;
 import com.example.dblab2.pojo.*;
@@ -17,6 +18,8 @@ public class AccessunitController {
     AccessunitMapper accessunitMapper;
     @Autowired
     StockMapper stockMapper;
+    @Autowired
+    AccessMapper accessMapper;
 
     @PostMapping("/add")
     public JsonUtil addAccessunit(@RequestBody Accessunit accessunit)
@@ -60,7 +63,11 @@ public class AccessunitController {
     @PostMapping("/delete")
     public JsonUtil deleteAccessunit(@RequestBody Accessunit accessunit)
     {
+        //au_seq,au_num,a_id,g_id
         accessunitMapper.deleteAccessunit(accessunit);
+        int s_id=accessMapper.getsid(accessunit.getA_id());
+        Stock stock=stockMapper.selectaStock(new Stock(s_id,accessunit.getG_id(),0));
+        stockMapper.updateStock(new Stock(s_id,accessunit.getG_id(),stock.getS_num()-accessunit.getAu_num()));
         return new JsonUtil(0,"删除成功",null);
     }
 

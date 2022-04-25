@@ -14,4 +14,8 @@
     <select id="selectMerchant" resultType="Merchant">
         select * from merchant;
     </select>
+
+    <select id="searchMerchant" resultType="Merchant">
+        select * from merchant where m_name like #{name};
+    </select>
 </mapper>

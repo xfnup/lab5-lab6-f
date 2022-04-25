@@ -14,4 +14,8 @@
     <select id="selectAccess" resultType="AccessView">
         select * from accessview
     </select>
+
+    <select id="getsid" resultType="int">
+        select s_id from access where a_id=#{a_id}
+    </select>
 </mapper>

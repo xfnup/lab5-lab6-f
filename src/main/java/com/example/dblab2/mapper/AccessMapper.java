@@ -15,4 +15,6 @@ public interface AccessMapper {
     int deleteAccess(int a_id);
 
     List<AccessView> selectAccess();
+
+    int getsid(int a_id);
 }

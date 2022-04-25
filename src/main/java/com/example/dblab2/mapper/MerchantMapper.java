@@ -14,4 +14,6 @@ public interface MerchantMapper {
     int deleteMerchant(Merchant merchant);
 
     List<Merchant> selectMerchant();
+
+    List<Merchant> searchMerchant(String name);
 }

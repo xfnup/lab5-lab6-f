@@ -33,6 +33,7 @@ public class PayController {
     {
         List<Pay> list=new ArrayList<>();
         Pay pay=payMapper.selectPay(o_id);
+        pay.setP_pprice(pay.getP_tprice()-pay.getP_rprice());
         list.add(pay);
         return Result.success(list);
     }

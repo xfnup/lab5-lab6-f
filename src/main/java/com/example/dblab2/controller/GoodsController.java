@@ -1,6 +1,7 @@
 package com.example.dblab2.controller;
 
 import com.example.dblab2.mapper.GoodsMapper;
+import com.example.dblab2.pojo.Customer;
 import com.example.dblab2.pojo.Goods;
 import com.example.dblab2.utils.JsonUtil;
 import com.example.dblab2.utils.Result;
@@ -36,6 +37,13 @@ public class GoodsController {
     public Result<List<Goods>> selectGoods()
     {
         List<Goods> list=goodsMapper.selectGoods();
+        return Result.success(list);
+    }
+
+    @GetMapping("/search")
+    public Result<List<Goods>> searchGoods(@RequestParam("name") String name)
+    {
+        List<Goods> list=goodsMapper.searchGoods(name+'%');
         return Result.success(list);
     }
 }

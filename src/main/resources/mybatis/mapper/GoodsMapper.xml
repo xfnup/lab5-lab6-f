@@ -14,4 +14,8 @@
     <select id="selectGoods" resultType="Goods">
         select * from goods;
     </select>
+
+    <select id="searchGoods" resultType="Goods">
+        select * from goods where g_name like #{name};
+    </select>
 </mapper>
