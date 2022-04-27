@@ -12,7 +12,7 @@
     </delete>
 
     <select id="selectCustomer" resultType="Customer">
-        select * from customer;
+        select * from customer group by c_type,c_id;
     </select>
 
     <select id="searchCustomer" resultType="Customer">

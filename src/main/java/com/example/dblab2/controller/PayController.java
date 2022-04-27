@@ -2,6 +2,7 @@ package com.example.dblab2.controller;
 
 import com.example.dblab2.mapper.PayMapper;
 import com.example.dblab2.pojo.Pay;
+import com.example.dblab2.pojo.payview;
 import com.example.dblab2.utils.JsonUtil;
 import com.example.dblab2.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,23 @@ public class PayController {
         pay.setP_pprice(pay.getP_tprice()-pay.getP_rprice());
         list.add(pay);
         return Result.success(list);
+    }
+
+    @GetMapping("/selectbycid")
+    public Result<List<payview>> selectpayview(@RequestParam("c_id") int c_id)
+    {
+        List<payview> list=new ArrayList<>();
+        List<payview> list1=new ArrayList<>();
+        payview p=new payview();
+        list= payMapper.selectpayview(c_id);
+        for (payview pv:list)
+        {
+            pv.setP_pprice(pv.getP_tprice()-pv.getP_rprice());
+            p.setP_tprice(p.getP_tprice()+pv.getP_tprice());
+            p.setP_pprice(p.getP_pprice()+pv.getP_pprice());
+            p.setP_rprice(p.getP_rprice()+pv.getP_rprice());
+        }
+        list1.add(p);
+        return Result.success(list1);
     }
 }

@@ -18,4 +18,8 @@
     <select id="selectPay" resultType="Pay">
         select * from pay where o_id=#{o_id}
     </select>
+
+    <select id="selectpayview" resultType="payview">
+        select p_tprice,p_rprice,p_pprice from pay where pay.o_id in (select output.o_id from output where output.c_id=#{c_id})
+    </select>
 </mapper>

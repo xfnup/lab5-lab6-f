@@ -12,7 +12,7 @@
     </delete>
 
     <select id="selectStorage" resultType="Storage">
-        select * from storage;
+        select * from storage group by s_address,s_id;
     </select>
 
     <select id="searchStorage" resultType="Storage">
